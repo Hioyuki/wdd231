@@ -1,0 +1,159 @@
+<h1>JavaScript Review Exercise</h1>
+<p><a href="https://byui-cse.github.io/wdd231-ww-course/week01/prepare-applied-javascript.html">WDD 231 Learning
+        Activity</a></p>
+<aside></aside>
+<style>
+
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-family: Roboto, Helvetica, sans-serif;
+}
+
+h1 {
+	margin: 0.5rem;
+}
+main {
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 1rem;
+	background-color: #ffc328;
+	box-shadow: 0 0 20px #aaa;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+div {
+	margin: 1rem;
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 0.5rem;
+	background-color: #eee;
+	font-size: smaller;
+}
+
+.step-reset {
+	counter-reset: step + 3;
+}
+.step {
+	counter-increment: step;
+}
+.step::before {
+	content: "#" counter(step) ":  ";
+	color: green;
+}
+
+input {
+	padding: 0.5rem;
+}
+
+input:focus {
+	outline: none;
+	box-shadow: 0 0 15px #aaa;
+}
+
+#questions {
+	padding: 1rem 1rem 1rem 2rem;
+}
+
+#questions ol li {
+	padding-bottom: .5rem;
+}
+
+aside {
+	margin: 1rem;
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 0.5rem;
+	background-color: #ffeebb;
+	color: #000;
+}
+
+code {
+	color: darkgreen;
+}
+</style>
+<main>
+    <div id="questions">
+        <ol>
+            <li>Change the given date output to this format: mon dd, year.
+                <em>Example, Apr 04, 2026</em>
+            </li>
+            <li>Replace this concatenated string using a template literal.</li>
+            <li>Declare a variable named quantity and assign it the value of the HTML input element with an id of
+                "<code>q</code>" using the <code>querySelector</code> method.</li>
+            <li>Output this string, "Welcome to <mark>our</mark> neighborhood!", to the first <code>&lt;aside&gt;</code>
+                in the HTML document.</li>
+            <li>Output the returned value of a function named <code>getCelsius</code> to an HTML input element with an
+                <code>id</code> of "<code>temp</code>". Feed the <code>getCelsius</code> literal value of 33 (which
+                represents 33°F). The <code>getCelsius</code> function is already included in the provided.</li>
+            <li>Select all the div elements in a document and assign the result to a <code>const</code> variable named
+                "<code>divs</code>" using <code>querySelectorAll</code>. Output to the provided <code>div</code> element
+                with an <code>id</code> of "<code>divs</code>".</li>
+            <li>Filter an array named <code>citynames</code> to return only city names in the array that start with the
+                letter "C" and store the resulting array into a variable named <code>filterC</code>. Output to the
+                provided <code>div</code> element with an <code>id</code> of "<code>c-names</code>".</li>
+        </ol>
+
+    </div>
+    <div id="output">
+        <div id="today1" class="step-reset step"></div>
+        <div id="today2" class="step"></div>
+        <div class="step">
+            <label for="q"><strong>Quantity</strong>: </label>
+            <input type="text" id="q" size="3" value="44">
+        </div>
+        <div class="step">Output to the first aside element at the top.</div>
+        <div class="step">
+            <label for="temp"><strong>Temperature</strong>: </label>
+            <input type="text" size="3" id="temp" readonly>
+        </div>
+        <div id="divs" class="step"></div>
+        <div id="c-names" class="step"></div>
+    </div>
+    <script>
+        // Select the HTML element to manipulate
+            const today1 = document.querySelector('#today1');
+            const today2 = document.querySelector('#today2');
+            const message = document.querySelector('aside');
+
+            // Varibles for activity use
+            let citynames = ["New York", "Sacramento", "Cleveland", "South Bend", "Tampa Bay", "Corpus Christi"];
+            let volume = 409;
+
+            function getCelsius(fahrenheit) {
+                return (fahrenheit - 32) * (5 / 9);
+            }
+
+            // Set up the Date format object parameter for toLocaleDateString method.
+            const options = {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            };
+
+            // Question #1
+            today1.innerHTML = new Date().toLocaleDateString("en-UK", options);
+
+            // Question #2
+            today2.innerHTML = "<strong>Volume</strong>: " + volume + " liters";
+
+            // Question #3
+
+            // Question #4
+
+            // Question #5
+
+            // Question #6
+
+            // Question #7
+
+    </script>
+</main>
+<aside></aside>
