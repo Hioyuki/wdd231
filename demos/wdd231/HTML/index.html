@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A passionate IT student learning data analysis and machine learning. Showcasing project experience and skills while sharing efforts toward a future career.">
+    <meta name="author" content="Hiroyuki">
+    <link rel="stylesheet" href="../styles/week01.css">
+    <link rel="stylesheet" href="../styles/week01S.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+    <title>My profile</title>
+</head>
+<body>
+    <header>
+        <img src="../images/Subject.webp" alt="profile img">
+        <span>Hiroyuki Shimada</span>
+    </header>
+    <button type="button" id="menu"></button>
+    <nav>
+        <ul class ="navigation">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="week2">Chamber</a>
+            </li>
+            <li>
+                <a href="week6">Final</a>
+            </li>
+            <li>
+                <a href="https://github.com/Hioyuki">GitHubProfile</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+        <div class="top-sections">
+            <section>
+                <h2>Course Work</h2>
+            </section>
+            <section class="Tokyo">
+                <h2>Tokyo Japan</h2>
+                <img src="../images/Cherry-Blossom.webp" alt="JapanImage">
+            </section>
+        </div>
+        <div class="bottom-sections">
+            <section>
+                <h2>Software Development</h2>
+                    <div class="buttons">
+                        <button onclick="displayCourses('All')">All Courses</button>
+                        <button onclick="displayCourses('WDD')">WDD Courses</button>
+                        <button onclick="displayCourses('CSE')">CSE Courses</button>
+                    </div>
+
+                <div id="course-List"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id ="year"></span>Hiroyuki Shimada  Japan</p>
+        <p id="lastModified"></p>
+
+    </footer>
+    <script>
+        //set the current year dynamically
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        //set the document's last modified date dynamically
+        document.getElementById("lastModified").textContent = "lastModified " + document.lastModified;
+    </script>
+    <script src="../scripts/week01.js"></script>
+</body>
+</html>
