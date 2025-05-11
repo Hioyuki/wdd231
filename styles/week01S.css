@@ -172,6 +172,24 @@ button {
     color: white;
 }
 
+#course-List {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+@media (min-width: 600px) {
+    #course-List {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 横3列 */
+        gap: 20px;
+        justify-items: center;
+    }
+}
+
     footer {
         display: flex;
         flex-direction: column;
