@@ -1,0 +1,304 @@
+body{
+    padding-top:100px;
+}
+
+/* === Header Section === */
+header {
+    display:flex;
+    justify-content: space-between;
+    background-color: darkorange;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 5000px;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLeft img{
+    width: 9%;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 4rem;
+}
+
+.Title {
+    display:flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+}
+
+.Title span{
+    font-size: 300%;
+}
+
+.Title a {
+    font-size: 100%;
+}
+
+nav{
+    display: flex;
+    justify-content: right;
+}
+.headerRight{
+    display: flex;
+    justify-content: space-between;;
+    padding:1px;
+}
+
+#menu {
+    display: none;
+}
+
+#menu::before {
+    font-size: 40px;
+    content: "☰";
+}
+
+#menu.open::before {
+    font-size: 40px;
+    content: "×";
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap:30px;
+    margin-right: 1rem;
+    margin-top: 50px;
+    color: aliceblue;
+}
+
+.navigation li{
+    list-style-type: none;
+}
+
+.navigation a {
+    font-size: 30px;
+    color: #000;;
+}
+
+.headerRight button{
+    width:40px;
+    height:40px;
+    margin-top: 35px;
+}
+
+
+/* === Main Section === */
+.mainImage{
+    display: flex;
+    justify-content: center;
+    margin:20px;
+}
+
+.mainImage img {
+    max-width: 1300px;
+    height: 600px;
+}
+
+h1{
+    margin: 50px;
+    margin-left: 80px;
+}
+
+.contents{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mainHome .headPart {
+    font-size: 30px;
+    text-align: center;
+    background-color: black;
+    color:aliceblue
+}
+
+.mainHome {
+    display: flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.mainSection1{
+    flex: 2;
+    background-color: darkorange;
+    color:black;
+    height: 250px;
+}
+
+.mainSection2 {
+    flex: 1;
+    background-color: darkorange;
+    height: 250px;
+}
+
+.mainSection3 {
+    flex: 1;
+    background-color: darkorange;
+    height: 250px;
+}
+
+.Selection span{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    background-color: black;
+    color: darkorange;
+    margin-top: 6rem;
+    padding: 20px;
+}
+
+.Menu{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    margin-top: 3rem;
+    background-color: black;
+}
+
+.Menu button{
+    width:300px;
+    height: 120px;
+    margin: 30px;
+    background-color:lightgreen;
+    font-size: 3rem;
+    box-shadow: 4px 4px 10px rgba(220, 96, 7, 0.3);
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.Menu button:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 15px rgba(241, 111, 4, 0.4);
+}
+
+/*ーーーーー jsonファイルーーーーーーー*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section.member-card {
+    border: 1px solid rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    color:darkorange;
+}
+
+/* Gridスタイル */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 10px;
+    padding: 1rem 0;
+}
+
+.grid section {
+    text-align: center;
+}
+
+.grid img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border: 1px solid #fff;
+    box-shadow: 0 0 1rem #555;
+    margin-bottom: 0.5rem;
+}
+
+.grid section>* {
+    margin: 0.3rem 0;
+}
+
+.grid h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Listスタイル */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem 0;
+}
+
+.list section {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.list section:nth-child(even) {
+    background-color: black;
+}
+
+.list section img {
+    display: none;
+}
+
+.list section h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+section.member-card a {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color:#00D1B2;
+    text-decoration: underline;
+}
+
+.level {
+    font-weight: bold;
+    color:aliceblue;
+}
+
+/* ーーーーーーーー */
+
+footer {
+    display:flex;
+    justify-content:space-between;
+    margin-top: 3rem;
+    background-color: black;
+    color:darkorange;
+}
+
+.address {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.snsIcon {
+    display: flex;
+    justify-content: space-around;
+    gap:40px;
+}
+
+.snsIcon img {
+    height: 80px;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.authority {
+    margin-right: 350px;
+    margin-top: 30px;
+}
+
