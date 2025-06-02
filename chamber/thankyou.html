@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+
+        .info {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .info p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Thank You for Your Submission!</h1>
+    <div class="info" id="confirmationInfo">
+        <!-- データがここに表示されます -->
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const fields = [
+            { label: "First Name", key: "firstName" },
+            { label: "Last Name", key: "lastName" },
+            { label: "Email", key: "email" },
+            { label: "Mobile Phone", key: "phone" },
+            { label: "Organization Name", key: "organization" },
+            { label: "Submitted At", key: "timestamp" }
+        ];
+
+        const container = document.getElementById("confirmationInfo");
+
+        fields.forEach(field => {
+            const value = params.get(field.key) || "(Not provided)";
+            const p = document.createElement("p");
+            p.textContent = `${field.label}: ${value}`;
+            container.appendChild(p);
+        });
+    </script>
+
+</body>
+
+</html>

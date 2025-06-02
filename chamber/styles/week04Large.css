@@ -1,0 +1,236 @@
+body {
+    padding-top: 100px;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkorange;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.headerLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLeft img {
+    width: 9%;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 4rem;
+}
+
+.Title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+}
+
+.Title span {
+    font-size: 300%;
+}
+
+.Title a {
+    font-size: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+.headerRight {
+    display: flex;
+    justify-content: space-between;
+    ;
+    padding: 1px;
+}
+
+#menu {
+    display: none;
+}
+
+#menu::before {
+    font-size: 40px;
+    content: "☰";
+}
+
+#menu.open::before {
+    font-size: 40px;
+    content: "×";
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 1rem;
+    margin-top: 50px;
+    color: aliceblue;
+}
+
+.navigation li {
+    list-style-type: none;
+}
+
+.navigation a {
+    font-size: 30px;
+    color: #000;
+    ;
+}
+
+.headerRight button {
+    width: 40px;
+    height: 40px;
+    margin-top: 35px;
+}
+
+/* -------  main  ------- */
+
+.RightLeft{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+.cards h2 {
+    font-size: 30px;
+}
+
+/* -----inputCSS------ */
+.form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form input[type="password"],
+.form select,
+.form textarea {
+    width: 100%;
+    max-width: 700px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+
+/* Keyframes for fade-in and slide-up */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to all cards */
+.card {
+    opacity: 0;
+    animation-name: fadeSlideIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.7s; }
+.form {
+    max-width: 420px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+
+/* --submitButton */
+button[type="submit"] {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+/* ---footer---- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: black;
+    color: #ffffff;
+}
+
+.address {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.snsIcon {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.snsIcon img {
+    height: 80px;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.authority {
+    margin-right: 350px;
+    margin-top: 30px;
+}
+
+
+
