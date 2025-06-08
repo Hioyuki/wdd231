@@ -1,0 +1,127 @@
+body {
+    padding-top: 100px;
+}
+
+/* === Header Section === */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkorange;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 5000px;
+}
+
+.headerLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLeft img {
+    width: 9%;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 4rem;
+}
+
+.Title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+}
+
+.Title span {
+    font-size: 300%;
+}
+
+.Title a {
+    font-size: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+.headerRight {
+    display: flex;
+    justify-content: space-between;
+    ;
+    padding: 1px;
+}
+
+#menu {
+    display: none;
+}
+
+#menu::before {
+    font-size: 40px;
+    content: "☰";
+}
+
+#menu.open::before {
+    font-size: 40px;
+    content: "×";
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 1rem;
+    margin-top: 50px;
+    color: aliceblue;
+}
+
+.navigation li {
+    list-style-type: none;
+}
+
+.navigation a {
+    font-size: 30px;
+    color: #000;
+    ;
+}
+
+.headerRight button {
+    width: 40px;
+    height: 40px;
+    margin-top: 35px;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: black;
+    color: darkorange;
+}
+
+.address {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.snsIcon {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.snsIcon img {
+    height: 80px;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.authority {
+    margin-right: 350px;
+    margin-top: 30px;
+}
