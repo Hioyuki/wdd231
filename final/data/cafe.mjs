@@ -1,0 +1,65 @@
+export const places = [
+    {
+      name: "Dining Cafe Bloom",
+      address: "1-6-11 Ichinomiyahonmachi, Shimonoseki-shi, Yamaguchi 751-0808",
+      cost: "Lunch: ¥1,000; Dinner: ¥2,000",
+      description: "A cozy dining café offering a variety of pasta and pizza dishes. The café features private rooms and a relaxed atmosphere, making it suitable for both casual meals and small gatherings.",
+      image: "./images/DiningCafe.webp"
+    },
+    {
+      name: "Akebono Coffee",
+      address: "2-15 Chofusotouracho, Shimonoseki-shi, Yamaguchi 752-0985",
+      cost: "¥1,000–¥2,000",
+      description: "A traditional-style café reminiscent of the Showa era, offering deep-roasted coffee and a variety of meals including pasta and curry. The café provides both bright and calm seating areas, catering to different preferences.",
+      image: "./images/pexels-viktoria-alipatova-1083711-2074130.webp"
+    },
+    {
+      name: "Kissa Shikitei",
+      address: "2 Chome-6-45 Chofusamuraimachi, Shimonoseki-shi, Yamaguchi 752-0978",
+      cost: "¥1,000–¥2,000",
+      description: "A traditional Japanese café offering a serene environment to enjoy tea and sweets. Located in the historic Chōfusamuraimachi area, it provides a peaceful retreat with a touch of cultural heritage.",
+      image: "./images/shikitei.webp"
+    },
+    {
+      name: "Lykke Cafe",
+      address: "18-28 Yamanotahonmachi, Shimonoseki-shi, Yamaguchi 751-0838",
+      cost: "Approximately ¥1,000",
+      description: "A stylish café known for its modern interior and a menu featuring both drinks and light meals. It's a great spot for those looking to relax in a contemporary setting.",
+      image: "./images/LykkeCefe.webp"
+    },
+    {
+      name: "UNPASS CAFE",
+      address: "4-2-22 Takezakicho (Notre Dame Shimonoseki 2F), Shimonoseki-shi, Yamaguchi 750-0025",
+      cost: "Approximately ¥1,000",
+      description: "Located on the second floor of Notre Dame Shimonoseki, this café offers a modern setting with a variety of beverages. It's a cozy spot for coffee enthusiasts.",
+      image: "./images/pexels-viktoria-alipatova-1083711-2074130.webp"
+    },
+    {
+      name: "VIE DE FRANCE",
+      address: "1F Ripie Shimonoseki, 4 Chome-3 Takezakicho, Shimonoseki-shi, Yamaguchi 750-0025",
+      cost: "¥1–¥1,000",
+      description: "A French-inspired bakery café offering a wide variety of housemade baked goods, sandwiches, and café fare. It's a convenient spot for breakfast or a light meal.",
+      image: "./images/VIE_DE_FRANCE.webp"
+    },
+    {
+      name: "Yomoyama",
+      address: "766-1 Kikugawacho Oaza Kamiokaeda, Shimonoseki-shi, Yamaguchi 750-0321",
+      cost: "¥1–¥1,000",
+      description: "Located in Kikugawachō Ōaza Kamiokaeda, Yomoyama offers a peaceful retreat with a selection of teas and snacks. It's a great place to unwind and enjoy a quiet moment.",
+      image: "./images/pexels-valeriya-1510693.webp"
+    },
+    {
+      name: "Zero Cafe",
+      address: "738 Kandakami, Toyohokucho, Shimonoseki-shi, Yamaguchi 759-6121",
+      cost: "Drinks: ¥550–¥650; Meals: ¥450–¥650",
+      description: "A seaside café near Doigahama Beach, known for its espresso lattes and scenic views. The terrace seats offer a spectacular view of the sea, making it a perfect spot to relax and enjoy the ocean breeze.",
+      image: "./images/Zero_Cafe.webp"
+    },
+    {
+      name: "Alley Sweets Boutique & Cafe",
+      address: "Alley, Ayaragimachi, Shimonoseki-shi, Yamaguchi",
+      cost: "¥600–¥1,200",
+      description: "A trendy dessert café featuring sweets from six different boutique shops. Popular for its fruit sandwiches, crepes, and Instagram‑worthy interior. Ideal for relaxing, studying, or catching up with friends." ,
+      image: "./images/pexels-stockphotoartist-2220618.webp"
+    }
+  ];

@@ -1,0 +1,146 @@
+:root {
+    --dark-brown: #5D3A00;
+    --milk-beige: #F5E9DA;
+    --coffee-brown: #8B5E3C;
+    --form-green: #A3B18A;
+    --white-cream: #FFFDF9;
+}
+
+body {
+    padding-top: 100px;
+    font-family: 'Segoe UI', 'Noto Sans JP', Arial, sans-serif;
+    background-color: var(--milk-beige);
+    color: var(--dark-brown);
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-brown);
+    color: var(--white-cream);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.headerLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLeft img {
+    width: auto;
+    height: 50px;
+    margin: 20px;
+}
+
+.Title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+    color: var(--white-cream);
+}
+
+.Title span {
+    font-size: 300%;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+.headerRight {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+#menu {
+    display: none;
+}
+
+#menu::before {
+    font-size: 40px;
+    content: "☰";
+    color: white;
+}
+
+#menu.open::before {
+    content: "×";
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 1rem;
+    margin-top: 50px;
+}
+
+.navigation li {
+    list-style-type: none;
+}
+
+.navigation a {
+    font-size: 30px;
+    color: var(--white-cream);
+    text-decoration: none;
+}
+
+/* ------- Main ------- */
+.RightLeft {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+.cards h2 {
+    font-size: 30px;
+}
+
+
+/* --- Footer --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: var(--dark-brown);
+    color: var(--white-cream);
+    padding: 2rem;
+}
+
+.address {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.snsIcon {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.snsIcon img {
+    height: 80px;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.authority {
+    margin-right: 350px;
+    margin-top: 30px;
+}
+
+.authority a {
+    color: white;
+}

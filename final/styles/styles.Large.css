@@ -1,0 +1,360 @@
+:root {
+    --dark-brown: #5D3A00;
+    --milk-beige: #F5E9DA;
+    --coffee-brown: #8B5E3C;
+    --form-green: #A3B18A;
+    --white-cream: #FFFDF9;
+}
+
+body {
+    padding-top: 30px;
+    font-family: 'Segoe UI', 'Noto Sans JP', Arial, sans-serif;
+    background-color: var(--milk-beige);
+    color: var(--dark-brown);
+}
+
+/* === Header Section === */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-brown);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    color: var(--white-cream);
+}
+
+.headerLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLeft img {
+    width: auto;
+    height: 50px;
+    margin: 20px;
+}
+
+.Title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+}
+
+.Title span {
+    font-size: 300%;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+.headerRight {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 1rem;
+    margin-top: 50px;
+}
+
+.navigation li {
+    list-style-type: none;
+}
+
+.navigation a {
+    font-size: 30px;
+    color: var(--white-cream);
+    text-decoration: none;
+}
+
+#menu {
+    display: none;
+}
+
+#menu::before {
+    font-size: 40px;
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "×";
+}
+
+/* === Main Section === */
+.mainImage {
+    display: flex;
+    justify-content: center;
+}
+
+.mainImage img {
+    max-width: 1300px;
+    height: 600px;
+}
+
+h1 {
+    margin: 50px;
+    text-align: center;
+}
+
+.contents {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 20px;
+    gap: 50px;
+}
+
+.mainHome .headPart {
+    font-size: 30px;
+    text-align: center;
+    background-color: var(--dark-brown);
+    color: var(--white-cream);
+}
+
+.mainHome {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainSection1,
+.mainSection2,
+.mainSection3 {
+    background-color: var(--white-cream);
+    color: var(--dark-brown);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.mainSection2 {
+    margin-top: 70px;
+}
+
+.mainSection3 {
+    margin-top: 50px;
+}
+
+.current-weather {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.current-temp {
+    font-size: 30px;
+}
+
+#weather-icon {
+    height: 80px;
+    width: 80px;
+}
+
+#forecast-container {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.forecast-day {
+    background-color: var(--white-cream);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 120px;
+}
+
+/* === セレクション === */
+.Selection span {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--dark-brown);
+    color: var(--white-cream);
+    padding: 20px;
+}
+
+/* === メニュー === */
+.Menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 1rem;
+    background-color: var(--dark-brown);
+}
+
+.Menu button {
+    width: 300px;
+    height: 120px;
+    margin: 30px;
+    background-color: var(--coffee-brown);
+    color: var(--white-cream);
+    font-size: 3rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(93, 58, 0, 0.2);
+    cursor: pointer;
+}
+
+.Menu button:hover {
+    background-color: var(--form-green);
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 15px rgba(93, 58, 0, 0.3);
+}
+
+/* === メンバーカード === */
+section.member-card {
+    border: 1px solid rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    background-color: var(--dark-brown);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    color: var(--white-cream);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 10px;
+    padding: 1rem 0;
+}
+
+.grid section {
+    text-align: center;
+}
+
+.grid img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border: 1px solid var(--white-cream);
+    box-shadow: 0 0 1rem var(--form-green);
+    margin-bottom: 0.5rem;
+}
+
+.grid h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* === リストビュー === */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem 0;
+}
+
+.list section {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    background-color: var(--dark-brown);
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: var(--white-cream);
+}
+
+.list section:nth-child(even) {
+    background-color: var(--dark-brown);
+}
+
+.list section h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+section.member-card a {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--milk-beige);
+    text-decoration: underline;
+}
+
+p.level {
+    font-weight: bold;
+    color: var(--white-cream);
+}
+
+/* === Footer === */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: var(--dark-brown);
+    color: var(--white-cream);
+    padding: 1.5rem 2rem;
+}
+
+.address {
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.snsIcon {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.snsIcon img {
+    height: 80px;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.authority {
+    margin-right: 350px;
+    margin-top: 30px;
+}
+
+.authority a{
+    color: white;
+}
+
+/* === Spotlight === */
+.spotlight-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--milk-beige);
+    border: 1px solid var(--form-green);
+}
+
+.spotlight-card {
+    border: 1px solid var(--coffee-brown);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    background-color: var(--white-cream);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.level {
+    color: var(--dark-brown);
+}

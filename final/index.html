@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="description" content="Connecting Local Business & Community">
+    <meta property="author" content="Hiroyuki">
+    <title>Tsunoshima Memory</title>
+    <link rel="stylesheet" href="./styles/styles.Large.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" href="./images/Logo-7.png" type="image/x-icon">
+    <meta property="og:title" content="Tsunoshima Memory" />
+    <meta name="description"
+        content="Explore Tsunoshima Memory — your guide to local cafés, community highlights, real-time weather, and featured businesses in Shimonoseki." />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        /* :root {
+            --main-color: #005f73;
+            --accent-color: #001F3F;
+            --background: #e0fbfc;
+            --card-bg: #ffffff;
+            --text-color: #001219;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        } */
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin-top: 100px;
+        }
+
+        .place {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .place>div {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .place>div button {
+            margin-top: auto;
+            align-self: stretch;
+            text-align: center;
+        }
+
+        .place>div:hover {
+            transform: scale(1.02);
+        }
+
+        figure {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 0.5rem;
+            width: 100%;
+            /* max-width: 300px; */
+            height: auto;
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+
+        figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        address {
+            font-style: normal;
+            color: #555;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--main-color);
+        }
+
+        figure::before {
+            display: flex;
+            justify-content: center;
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%);
+            transform: rotate(25deg);
+            opacity: 0;
+        }
+
+        figure img:hover {
+            filter: brightness(1.1) contrast(1.2);
+            transition: filter 0.3s ease;
+        }
+
+        figure:hover::before {
+            animation: shine 1s ease-in-out;
+            opacity: 1;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: rotate(25deg) translate(-100%, -100%);
+            }
+
+            50% {
+                transform: rotate(25deg) translate(100%, 100%);
+            }
+
+            100% {
+                transform: rotate(25deg) translate(200%, 200%);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="headerLeft">
+            <img src="./images/Logo-7.png" alt="profile img">
+            <div class="Title">
+                <span>Tsunoshima memory</span>
+            </div>
+        </div>
+        <div class="headerRight">
+            <nav>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./form.html">Membership Form</a></li>
+                    <li><a href="./Introduction.html">Introduction</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="menu">
+                <span class="sr-only">Open navigation menu</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="mainImage">
+            <img src="./images/FB9BE71AE12344CB82FA08F8650EA5CB.webp" alt="HomeImage">
+        </div>
+        <h1>HOME</h1>
+        <div class="contents">
+            <div class="mainHome">
+                <section class="mainSection1">
+                    <div class="headPart">
+                        <h3>Location</h3>
+                    </div>
+                    <section class="map-section">
+                        <h3>Local map</h3>
+                        <div id="map" style="height: 400px;"></div>
+                    </section>
+                </section>
+                <section class="mainSection2">
+                    <div class="headPart">
+                        <h3>Current Weather</h3>
+                    </div>
+                    <div class="current-weather">
+                        <p>The current temperature in TOKYO is <span id="current-temp" class="current-temp"></span>°C</p>
+                        <figure>
+                            <img id="weather-icon" src="https://via.placeholder.com/50" alt="Weather icon placeholder">
+                            <figcaption id="weather-desc"></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="mainSection3">
+                    <div class="headPart">
+                        <h3>Weather Forecast</h3>
+                    </div>
+                    <div id="forecast-container">
+                    </div>
+                </section>
+            </div>
+            <div class="Selection">
+                <span>User Layout View Selection</span>
+            </div>
+            <div class="Menu">
+                <button id="grid">⏹️ Grid</button>
+                <button id="list">📄 List</button>
+            </div>
+            <article id="cafeDisplay" class="grid">
+            </article>
+        </div>
+        <section id="spotlight-container" class="spotlight-section">
+            <h3>Spotlight Members</h3>
+        </section>
+
+        <footer>
+            <div class="address">
+            </div>
+            <div class="snsIcon">
+                <img src="./images/social_15447079.png" alt="YouTube icon">
+                <img src="./images/youtube_3938026.png" alt="Twitter icon">
+                <img src="./images/logos_14417709.png" alt="Social media icon">
+            </div>
+            <div class="authority">
+                <p>Hiroyuki Shimada</p>
+                <p>&copy; <span id="year"></span></p>
+                <p id="lastModified"></p>
+                <a href="https://youtu.be/Obh8kMWaWsQ?si=GtjxaHJebLtgfz4c">YouTube</a>
+            </div>
+        </footer>
+    </main>
+    <script type="module" src="./scripts/scripts.js"></script>
+    <script>
+        //set the current year dynamically
+        document.getElementById("year").textContent = new Date().getFullYear();
+        //set the document's last modified date dynamically
+        document.getElementById("lastModified").textContent = "lastModified " + document.lastModified;
+
+          // Leaflet 地図の初期化（例：角島の座標）
+            const map = L.map('map').setView([34.3519, 130.8708], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // マーカーを追加
+            L.marker([34.3519, 130.8708]).addTo(map)
+                .bindPopup('<span style="font-size: 20px;"><strong>This is Tunoshima</strong></span>')
+                .openPopup();
+
+
+            //Current Weather
+            const apiKey = 'b5f8993e3dabea9faa23eda404a8a48e'
+            const city = 'Shimonoseki';
+            const units = 'metric';
+
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+
+            fetch(weatherUrl)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const description = data.weather[0].description;
+                const icon = data.weather[0].icon;
+                const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+                // HTML に反映
+                document.getElementById('current-temp').textContent = `${temp}`;
+                document.getElementById('weather-desc').textContent = description;
+                document.getElementById('weather-icon').src = iconUrl;
+                document.getElementById('weather-icon').alt = description;
+            })
+            .catch(error => {
+                console.error('Error', error);
+                document.getElementById('current-temp').textContent = '';
+                document.getElementById('weather-desc').textContent = '';
+            });
+
+            //Weather Forecast
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+
+            fetch(forecastUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const forecastContainer = document.getElementById('forecast-container');
+                    forecastContainer.innerHTML = ''; // 既存をクリア
+
+                    // 1日1件ずつ取得するために、12:00 のデータを基準に抽出
+                    const dailyForecasts = data.list.filter(forecast => forecast.dt_txt.includes("12:00:00")).slice(0, 3);
+
+                    dailyForecasts.forEach(forecast => {
+                        const date = new Date(forecast.dt_txt);
+                        const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+                        const temp = forecast.main.temp;
+                        const description = forecast.weather[0].description;
+                        const icon = forecast.weather[0].icon;
+                        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+                        const card = document.createElement('div');
+                        card.classList.add('forecast-day');
+                        card.innerHTML = `
+                <h4>${day}</h4>
+                <img src="${iconUrl}" alt="${description}" width="50">
+                <p>${description}</p>
+                <p>${temp} °C</p>
+            `;
+
+                        forecastContainer.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching forecast:', error);
+                    document.getElementById('forecast-container').textContent = '予報を取得できませんでした。';
+                });
+
+    </script>
+</body>
+
+</html>
